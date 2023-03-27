@@ -5,13 +5,13 @@
     	<div>
     		<a href="/companies" class="float-right text-gray-400 hover:text-gray-600">All companies</a>
     	</div>
-    	<div class="flex flex-col w-full sm:w-96 sm:flex-row border rounded-md border-blue-500 mt-5 shadow-md shadow-blue-500">
-        	<div class="flex min-w-fit justify-center border-b border-b-blue-500 sm:justify-left sm:border-r sm:border-r-blue-500">
+    	<div class="flex flex-col sm:flex-row border rounded-md border-blue-500 mt-5 shadow-md shadow-blue-500">
+        	<div class="flex justify-center border-b border-b-blue-500 sm:justify-left sm:border-r sm:border-r-blue-500">
         		<div>
         			<img src="{{$company->logo()}}" class="m-2">
         		</div>
         	</div>
-         	<div class="flex flex-col w-full">
+         	<div class="flex flex-col">
             	<span class="text-gray-200 p-3">{{$company->name}}</span>
             	<a class="text-gray-400 p-3 border-t border-t-blue-500 break-all hover:text-gray-600" href="mailto:{{$company->email}}">{{$company->email}}</a>
             	<a class="text-gray-400 p-3 border-t border-t-blue-500 break-all hover:text-gray-600" href="{{$company->website}}" target='_blank'>{{Str::limit($company->website, 20, ' ...')}}</a>

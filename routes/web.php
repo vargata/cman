@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('companies', function () {
     
     return view('companies', [
-        'companies' => Company::paginate(10)
+        'companies' => Company::orderBy('name', 'ASC')->paginate(10)
     ]);
     
 })->middleware('auth');
@@ -61,7 +61,8 @@ Route::get('employee.edit/{employee}', function ($id) {
     
 })->middleware('auth');
 
-Route::post('employee.edit', [EmployeeController::class, 'saveEmployee'])->middleware('auth');
+Route::post('employee.edit/{employee}', [EmployeeController::class, 'saveEmployee'])->middleware('auth');
+Route::get('employee.delete/{employee}', [EmployeeController::class, 'deleteEmployee'])->middleware('auth');
 
 Route::get('login', [SessionController::class, 'showLogin'])->name('login')->middleware('guest');
 Route::post('login', [SessionController::class, 'login'])->middleware('guest');

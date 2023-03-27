@@ -5,7 +5,7 @@
     	<div>{{$companies->links()}}</div>
          	<div class="flex flex-col rounded-md border border-blue-500 my-5">
      			@foreach($companies as $company)
-         		<div class="flex gap-3 p-3 border-t border-t-blue-500 first:border-t-0">
+         		<div class="flex gap-3 border-t border-t-blue-500 first:border-t-0 items-center">
             		<div class="m-2 min-w-fit">
             			<img src="{{$company->logo()}}" alt="logo" width="60" height="60">
             		</div>
